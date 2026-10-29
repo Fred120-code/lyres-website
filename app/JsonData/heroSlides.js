@@ -10,7 +10,7 @@ const HeroSlides = [
     buttonText: "Découvrir le BIM", buttonLink: "/expertises" },
   { bgImage: "/images/ouvrages.svg", span: "Infrastructures", title: "Routes, ponts \net rail",
     paragraphs: ["Voiries, réseaux d’assainissement, ouvrages d’art et infrastructures ferroviaires : de l’étude à la livraison.", "Une expertise technique au service des maîtres d’ouvrage publics et privés."],
-    buttonText: "Nos missions", buttonLink: "/realisations" },
+    buttonText: "Nos réalisations", buttonLink: "/realisations" },
   { bgImage: "/images/amenagement.svg", span: "Conseil aux entreprises", title: "Décider \nen confiance",
     paragraphs: ["Assistance technique, optimisation des méthodes, aide à la décision et accompagnement opérationnel.", "Parlez-nous de votre projet : nous revenons vers vous rapidement."],
     buttonText: "Nous contacter", buttonLink: "/contact" },

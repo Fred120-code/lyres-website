@@ -1,167 +1,123 @@
 import { notFound } from "next/navigation";
 import PropertyData from "../../JsonData/properties";
 import Image from "next/image";
+import Link from "next/link";
 import SwiperComp from "../../Component/Swiper/SwiperComp";
+import PageHero from "../../Component/PageHero/PageHero";
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
-  const p = PropertyData.find((i) => i.id === parseInt(id));
+  const p = PropertyData.find((i) => i.id === Number(id));
   return p ? { title: p.title, description: p.desc, alternates: { canonical: `/realisations/${p.id}` } } : {};
 }
 
 export default async function PropertyDetails({ params }) {
   const { id } = await params;
-  const property = PropertyData.find((item) => item.id === parseInt(id));
+  const property = PropertyData.find((item) => item.id === Number(id));
   if (!property) notFound();
 
-    const relatedProperties = PropertyData.filter(
-      (item) => item.id !== property.id && item.location === property.location,
-    );
+  const relatedProperties = PropertyData.filter(
+    (item) => item.id !== property.id,
+  );
 
- 
   return (
-    <div>
-      <div
-        className="relative md:h-[68vh] h-[280px] overflow-hidden flex items-center
-         justify-center text-center"
-      >
-        <img src="/images/hero.svg" alt="" className="absolute top-0 left-0 w-full h-full object-cover z-0" />
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-black/70
-            z-10"
-        />
-        <h1 className="text-white text-[3rem] md:text-[5rem] font-bricolage z-20">
-          {property.title}
-        </h1>
-      </div>
+    <main>
+      <PageHero title={property.title} />
 
-      {/* Property Details */}
-      <div className="px-[8%] lg:px-[12%] py-10">
-        <div className=" grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
+      <section className="px-4 py-10 sm:px-8 lg:px-[8.5%] lg:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-8 md:grid-cols-2 lg:gap-12">
+          <div className="relative h-[280px] w-full overflow-hidden rounded-lg shadow-lg sm:h-[360px] lg:h-[400px]">
             <Image
               src={property.image}
               alt={property.title}
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
 
-          <div className="p-8">
-            <div className=" flex justify-between items-start gap-2">
-              <div>
-                <h2
-                  className="text-4xl font-bold text-gray-800
-                         font-bricolage mb-2"
-                >
-                  {property.title}
-                </h2>
-                <p className="text-lg text-gray-600 mb-1 leading-relaxed">
-                  {property.desc}
-                </p>
+          <div className="pt-2">
+            <p className="mt-3 text-base leading-relaxed text-gray-700 sm:text-lg">
+              {property.desc}
+            </p>
+
+            <dl className="mt-5 flex flex-wrap gap-3 text-sm text-gray-800 sm:text-base">
+              <div className="rounded border border-gray-800 px-2 py-2">
+                <dt className="inline font-semibold">Secteur :</dt>{" "}
+                <dd className="inline">{property.location}</dd>
               </div>
+              <div className="rounded border border-gray-800 px-2 py-2">
+                <dt className="inline font-semibold">Zone :</dt>{" "}
+                <dd className="inline">{property.zone}</dd>
+              </div>
+              <div className="rounded border border-gray-800 px-2 py-2">
+                <dt className="inline font-semibold">Rôle de LYRES :</dt>{" "}
+                <dd className="inline">{property.role}</dd>
+              </div>
+              <div className="rounded border border-gray-800 px-2 py-2">
+                <dt className="inline font-semibold">Client :</dt>{" "}
+                <dd className="inline">{property.client}</dd>
+              </div>
+            </dl>
 
-              <span>{property.location}</span>
-            </div>
-
-            {/* Static info section */}
-            <div
-              className="mb-6 mt-3 space-y-1 text-gray-700
-            font-medium flex flex-wrap gap-x-5 gap-y-3"
-            >
-              <p className="p-2 rounded border border-gray-800">
-                <span className="font-semibold">Secteur :</span>
-                {property.location}
-              </p>
-              <p className="p-2 rounded border border-gray-800">
-                <span className="font-semibold">Zone :</span>Île-de-France</p>
-              <p className="p-2 rounded border border-gray-800">
-                <span className="font-semibold">Rôle de LYRES :</span>
-                Études et pilotage
-              </p>{" "}
-              <p className="p-2 rounded border border-gray-800">
-                <span className="font-semibold">Client :</span>
-                Maître d’ouvrage ou entreprise
-              </p>
-            </div>
-
-            <p className="mt-3 font-bricolage text-gray-700">
-              Exemple de mission type : une intervention structurée, de l’analyse du besoin à la réception, avec un interlocuteur unique et des livrables clairs.
-            </p>
-            <p className="mt-3 font-bricolage text-gray-700">
-              Chaque mission est adaptée à la taille du projet, à son contexte et aux contraintes du maître d’ouvrage.
+            <p className="mt-6 leading-relaxed text-gray-700">
+              Exemple illustratif de mission, à adapter aux références réelles
+              du projet.
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Desc */}
-      <div className="px-[8%] lg:px-[12%] py-16">
-        <h1 className="text-6xl font-bold font-bricolage mb-10">Description de la mission</h1>
-        <p className="font-bricolage text-lg mb-2">
-          Cette mission illustre notre démarche : cadrage précis des enjeux, études techniques documentées, coordination des intervenants et suivi rigoureux des coûts et des délais.
-        </p>
-        <p className="font-bricolage text-lg mb-2">
-          Nous privilégions la clarté : des comptes rendus réguliers, des décisions tracées et une information partagée avec tous les acteurs.
-        </p>
-        <p className="font-bricolage text-lg mb-2">
-          Contactez-nous pour discuter d’une mission similaire sur votre projet.
-        </p>
-      </div>
-
-      {/* Amenties */}
-      <div className="px-[8%] lg:px-[12%] py-16 rounded-xl shadow-sm bg-white">
-        <h1 className="text-3xl md:text-4xl font-bold mb-10">Nos livrables</h1>
-
-        {/* Amenities Grid */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5
-                    gap-8 text-gray-700"
-        >
-          <div className="flex items-center gap-3">
-            <i
-              className="bi bi-check2-circle text-[#c9a24b]
-                text-2xl"
-            ></i>
-            <span>Notes de synthèse technique</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <i
-              className="bi bi-check2-circle text-[#c9a24b]
-                text-2xl"
-            ></i>
-            <span>Plannings et suivi budgétaire</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <i
-              className="bi bi-check2-circle text-[#c9a24b]
-                text-2xl"
-            ></i>
-            <span>Comptes rendus de chantier</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <i
-              className="bi bi-check2-circle text-[#c9a24b]
-                text-2xl"
-            ></i>
-            <span>Contrôle de conformité</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <i
-              className="bi bi-check2-circle text-[#c9a24b]
-                text-2xl"
-            ></i>
-            <span>Dossier de livraison</span>
+      <section className="px-4 py-12 sm:px-8 lg:px-[8.5%] lg:py-16">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="font-bricolage text-4xl font-bold sm:text-5xl lg:text-6xl">
+            Description de la mission
+          </h2>
+          <div className="mt-6 space-y-3 leading-relaxed text-gray-900">
+            {property.missionDescription.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <p>
+              <Link
+                href="/contact"
+                className="font-medium underline decoration-[#c9a24b] decoration-2 underline-offset-4 hover:text-[#8b6a1e]"
+              >
+                Contactez-nous pour discuter d’une mission similaire sur votre
+                projet.
+              </Link>
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="px-[8%] lg:px-[12%] py-16 bg-gray-50">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">Autres missions</h2>
+      <section className="border-t border-gray-100 px-4 py-12 sm:px-8 lg:px-[8.5%] lg:py-16">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="font-bricolage text-3xl font-bold sm:text-4xl">
+            Nos livrables
+          </h2>
+          <ul className="mt-8 grid grid-cols-1 gap-6 text-gray-700 sm:grid-cols-2 lg:grid-cols-5">
+            {property.deliverables.map((deliverable) => (
+              <li key={deliverable} className="flex items-center gap-3">
+                <i
+                  aria-hidden="true"
+                  className="bi bi-check2-circle text-2xl text-[#c9a24b]"
+                />
+                <span>{deliverable}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-        <SwiperComp relatedProperties={relatedProperties} />
-      </div>
-    </div>
+      <section className="bg-gray-50 px-4 py-12 sm:px-8 lg:px-[8.5%] lg:py-16">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-8 font-bricolage text-3xl font-bold sm:text-4xl">
+            Autres réalisations
+          </h2>
+          <SwiperComp relatedProperties={relatedProperties} />
+        </div>
+      </section>
+    </main>
   );
 }

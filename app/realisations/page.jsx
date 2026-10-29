@@ -1,36 +1,80 @@
-import Properties from "../Component/Properties/Properties";
+import Image from "next/image";
+import Link from "next/link";
+import PropertyData from "../JsonData/properties";
+import PageHero from "../Component/PageHero/PageHero";
 
-export const metadata = { title: "Missions : exemples d’interventions", description: "Exemples de missions de LYRES : coordination BIM, suivi de travaux de voirie, études d’ouvrage d’art, travaux ferroviaires.", alternates: { canonical: "/realisations" } };
-
-const page = () => {
-  return (
-    <section>
-      <div
-        className="relative h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px] 
-        xl:h-[68vh] overflow-hidden flex flex-col items-center
-         justify-center text-center"
-      >
-        <img src="/images/hero.svg" alt="" className="absolute top-0 left-0 w-full h-full object-cover z-0" />
-
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-black/70
-            z-10"
-        />
-
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl 
-        lg:text-5xl xl:text-6xl font-bricolage z-20 leading-tight px-4">Missions</h1>
-
-        <h1 className="text-white text-xs sm:text-sm md:text-base lg:text-lg 
-        font-bold font-bricolage mt-2 sm:mt-3 md:mt-4 z-20 px-4">Exemples de missions</h1>
-        
-      </div>
-
-      <div className=" mx-auto px-4 sm:px-6 md:px-8 lg:px-12 mb-8 
-      sm:mb-10 md:mb-12 lg:mb-16">
-        <Properties />
-      </div>
-    </section>
-  );
+export const metadata = {
+  title: "Réalisations : exemples de missions",
+  description:
+    "Découvrez des exemples de missions de LYRES en bâtiment, voirie, ouvrages d’art, ferroviaire, aménagement urbain et BIM.",
+  alternates: { canonical: "/realisations" },
 };
 
-export default page;
+export default function RealisationsPage() {
+  return (
+    <main>
+      <PageHero
+        title="Réalisations"
+        subtitle="Exemples de missions types dans nos domaines d’intervention."
+      />
+
+      <section
+        aria-labelledby="realisations-title"
+        className="px-4 py-12 sm:px-8 sm:py-16 lg:px-[12%] lg:py-20"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 max-w-2xl sm:mb-12">
+            <h2
+              id="realisations-title"
+              className="font-bricolage text-3xl font-bold sm:text-4xl"
+            >
+              Exemples de missions
+            </h2>
+            <p className="mt-3 text-gray-700">
+              Parcourez les types de projets sur lesquels LYRES peut vous
+              accompagner.
+            </p>
+          </div>
+
+          <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {PropertyData.map((property) => (
+              <li key={property.id} className="min-w-0">
+                <Link
+                  href={`/realisations/${property.id}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c9a24b]"
+                >
+                  <div className="relative h-56 w-full overflow-hidden sm:h-64">
+                    <Image
+                      src={property.image}
+                      alt={property.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-[#8b6a1e]">
+                      {property.location}
+                    </p>
+                    <h3 className="mt-2 font-bricolage text-xl font-bold sm:text-2xl">
+                      {property.title}
+                    </h3>
+                    <p className="mt-3 flex-1 leading-relaxed text-gray-700">
+                      {property.desc}
+                    </p>
+                    <span className="mt-5 inline-flex items-center font-semibold">
+                      Découvrir l’exemple
+                      <span aria-hidden="true" className="ml-2">
+                        →
+                      </span>
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </main>
+  );
+}

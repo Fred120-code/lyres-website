@@ -34,7 +34,7 @@ const Nav = () => {
   const navLinks = [
     { name: "Accueil", href: "/" },
     { name: "Expertises", href: "/expertises" },
-    { name: "Missions", href: "/realisations" },
+    { name: "Réalisations", href: "/realisations" },
     { name: "À propos", href: "/a-propos" },
     { name: "Contact", href: "/contact" },
   ];

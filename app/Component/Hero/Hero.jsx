@@ -15,11 +15,7 @@ import HeroSlides from "../../JsonData/heroSlides";
 import Marquee from "../Marquee/Marquee";
 import About from "../About/About";
 import DesingProcess from "../DesingProcess/DesingProcess";
-import Service from "../Service/Service";
 import Properties from "../Properties/Properties";
-import Marquee2 from "../Marquee2/Marquee2";
-import Service2 from "../Service2/Service2";
-import Gallery from "../Gallery/Gallery";
 import VideoBanner from "../VideoBanner/VideoBanner";
 import Testimonial from "../Testimonial/Testimonial";
 import SocialImage from "../SocialImage/SocialImage";
@@ -112,20 +108,8 @@ const Hero = () => {
       {/* DesingProcess */}
       <DesingProcess />
 
-      {/* Services */}
-      <Service />
-
       {/* Properties */}
       <Properties />
-
-      {/* Marquee 2 */}
-      <Marquee2 />
-
-      {/* Service2 */}
-      <Service2 />
-
-      {/* Gallery */}
-      <Gallery />
 
       {/* VideoBanner */}
       <VideoBanner />

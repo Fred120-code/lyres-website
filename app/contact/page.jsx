@@ -1,5 +1,6 @@
 "use client"
 import { trackEvent } from "../../lib/gtm";
+import PageHero from "../Component/PageHero/PageHero";
 
 const page = () => {
   const handleSubmit = (e) => {
@@ -15,32 +16,14 @@ ${d.get("message")}`;
   };
   return (
     <div>
-      <div
-        className="relative h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px] 
-        xl:h-[68vh] overflow-hidden flex flex-col items-center
-         justify-center text-center"
-      >
-        <img src="/images/hero.svg" alt="" className="absolute top-0 left-0 w-full h-full object-cover z-0" />
-
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-black/70
-            z-10"
-        />
-
-        <h1
-          className="text-white text-2xl sm:text-3xl md:text-4xl 
-        lg:text-5xl xl:text-6xl font-bricolage z-20 leading-tight px-4"
-        >
-          Contact
-        </h1>
-      </div>
+      <PageHero title="Contact" />
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Left Side */}
             <div className="lg:w-1/2 space-y-6">
-              <h1 className="">Let's Talk</h1>
+              <h1 className="">Let&apos;s Talk</h1>
               <h2>
                 Décrivez-nous votre projet : nous revenons vers vous rapidement.
               </h2>

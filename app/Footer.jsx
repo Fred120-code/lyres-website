@@ -66,7 +66,7 @@ const Footer = () => {
                     className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700 hover:text-black
                      hover:ps-2 transition-all duration-300"
                   >
-                    Missions
+                    Réalisations
                   </Link>
                   <Link
                     href="/contact"

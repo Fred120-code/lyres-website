@@ -14,19 +14,20 @@ const Properties = () => {
       <section className="px-4 sm:px-[8%] lg:px-[12%] py-8 sm:py-12 md:py-16 lg:py-20 relative">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
           <div className="lg:w-2/3 w-full">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bricolage font-bold leading-tight">Nos missions</h1>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bricolage font-bold leading-tight">Quelques réalisations</h2>
           </div>
           <div className="w-full lg:w-1/3">
             <h3 className="text-lg sm:text-xl md:text-2xl font-jost font-semibold mb-2 sm:mb-3">Exemples de missions</h3>
             <p className="mb-3 sm:mb-4 text-gray-700 text-sm sm:text-base leading-relaxed">
               Un aperçu de la manière dont nous intervenons sur vos projets : études, coordination BIM, pilotage de chantier et conseil.
             </p>
-            <a href="/realisations">
-              <button className="flex items-center text-black font-semibold hover:underline text-sm sm:text-base md:text-lg py-2 sm:py-3 px-0 transition-all">
-                <span>Toutes les missions</span>
-                <i className="bi bi-arrow-up-right ml-2 text-xs"></i>
-              </button>
-            </a>
+            <Link
+              href="/realisations"
+              className="flex items-center text-black font-semibold hover:underline text-sm sm:text-base md:text-lg py-2 sm:py-3 px-0 transition-all"
+            >
+              <span>Toutes les réalisations</span>
+              <i className="bi bi-arrow-up-right ml-2 text-xs"></i>
+            </Link>
           </div>
         </div>
 
