@@ -122,10 +122,7 @@ const Footer = () => {
 
         <div className="border-b border-gray-300 py-4 sm:py-6 bg-white px-4 sm:px-6">
           <p className="text-center text-xs sm:text-sm md:text-base lg:text-lg">
-            &copy; {new Date().getFullYear()} LYRES. Tous droits réservés. Site réalisé par{" "}
-            <a href="#" className="font-semibold hover:underline">
-              Joran Fred
-            </a>
+            &copy; {new Date().getFullYear()} LYRES.
           </p>
         </div>
       </footer>

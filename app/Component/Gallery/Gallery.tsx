@@ -5,7 +5,9 @@ const Gallery = () => {
   return (
     <section className="px-4 sm:px-6 md:px-8 lg:px-[12%] py-8 sm:py-12 md:py-16">
       <div className="container mx-auto px-0">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bricolage font-bold mb-6 sm:mb-8 md:mb-10">Nos domaines d’intervention</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bricolage font-bold mb-6 sm:mb-8 md:mb-10">
+          Nos domaines d’intervention
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {galleryItems.map((item, idx) => (
             <a
