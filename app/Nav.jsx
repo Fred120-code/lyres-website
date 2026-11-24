@@ -41,8 +41,8 @@ const Nav = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
-        ${isSticky ? "bg-white shadow-lg" : "bg-transparent border-b border-gray-400"}`}
+      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-300
+        ${isSticky ? "bg-white shadow-lg" : "border-b border-white/30 bg-black/60 shadow-md"}`}
     >
       <div className="flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-[12%] py-4 md:py-6">
         {/* Logo */}

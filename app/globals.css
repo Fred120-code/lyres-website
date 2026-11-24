@@ -112,6 +112,12 @@ body {
   position: absolute;
   top: 75% !important;
   left: 8% !important;
+  z-index: 20;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .swiper-next {
@@ -162,16 +168,44 @@ body {
   animation: Anim-fade-bottom var(--transition-slow) 1.3s forwards linear;
 }
 
-/* Hero MQ Section */
+.hero-section {
+  height: 100vh;
+  height: 100svh;
+  min-height: 36rem;
+  overflow: hidden;
+}
+
+.hero-swiper,
+.hero-swiper .swiper-wrapper,
+.hero-swiper .swiper-slide {
+  height: 100%;
+}
+
+.hero-slide {
+  box-sizing: border-box;
+  padding: 6rem clamp(1.25rem, 8vw, 8rem) 8rem;
+}
+
+.hero-section .swiper-btn {
+  top: auto !important;
+  bottom: 1.5rem !important;
+  left: clamp(1.25rem, 8vw, 8rem) !important;
+}
+
+.hero-section .swiper-next {
+  left: calc(clamp(1.25rem, 8vw, 8rem) + 5rem) !important;
+}
 
 @media (max-width: 991px) {
-  .swiper-btn {
-    top: 85% !important;
-    left: 5% !important;
+  .hero-slide {
+    padding-top: 6rem;
+    padding-bottom: 7rem;
   }
 
-  .swiper-next {
-    left: 85% !important;
+  .hero-section .swiper-btn i {
+    width: 3.5rem;
+    height: 3.25rem;
+    font-size: 2rem;
   }
 }
 

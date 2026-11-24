@@ -48,7 +48,7 @@ const About = () => {
 
         {/* Main Section */}
         <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10">
-          <div className="lg:w-1/2 w-full">
+          <div className="w-full overflow-hidden lg:w-1/2">
             <Swiper
               modules={[Navigation, EffectCards, Autoplay]}
               loop={true}

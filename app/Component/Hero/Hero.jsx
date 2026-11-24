@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, EffectCards } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/effect-cards";
 
 import { trackEvent } from "../../../lib/gtm";
 
@@ -24,22 +23,21 @@ const Hero = () => {
   return (
     <>
       {/* Hero */}
-      <div className="w-full h-screen relative">
+      <section className="hero-section relative w-full">
         <Swiper
-          modules={[Navigation, Autoplay, EffectCards]}
+          modules={[Navigation, Autoplay]}
           loop={true}
           autoplay={{ delay: 4000 }}
           navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".hero-swiper-next",
+            prevEl: ".hero-swiper-prev",
           }}
-          className="h-full"
-        >j
+          className="hero-swiper h-full"
+        >
           {HeroSlides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div
-                className="w-full h-full relative flex items-center  justify-center
-                                text-white px-6"
+                className="hero-slide relative flex h-full w-full items-center justify-center text-white"
                 style={{
                   backgroundImage: `url(${slide.bgImage})`,
                   backgroundSize: "cover",
@@ -47,19 +45,19 @@ const Hero = () => {
                 }}
               >
                 {/* Overlay */}
-                <div className=" absolute inset-0 bg-black/70 z-0"></div>
+                <div className="absolute inset-0 z-0 bg-black/70"></div>
                 {/* Content */}
 
-                <div className=" relative hero-content z-10 max-w-4xl text-start space-y-6">
-                  <span className="text-xl font-medium uppercase">
+                <div className="hero-content relative z-10 w-full max-w-5xl space-y-4 text-start sm:space-y-6">
+                  <span className="text-sm font-medium uppercase tracking-wide sm:text-base md:text-xl">
                     {slide.span}
                   </span>
-                  <h1 className="text-6xl md:text-8xl font-bold font-bricolage whitespace-pre-line">
+                  <h1 className="whitespace-pre-line font-bricolage text-4xl font-bold sm:text-5xl md:text-7xl lg:text-8xl">
                     {slide.title}
                   </h1>
-                  <div className=" flex flex-col md:flex-row gap-4 text-lg justify-center">
+                  <div className="flex flex-col justify-center gap-3 text-sm sm:gap-4 sm:text-base md:flex-row md:gap-6 md:text-lg">
                     {slide.paragraphs.map((paragraph, idx) => (
-                      <p key={idx} className="max-w-xl">
+                      <p key={idx} className="max-w-xl md:flex-1">
                         {paragraph}
                       </p>
                     ))}
@@ -67,12 +65,13 @@ const Hero = () => {
 
                   <Link href={slide.buttonLink}>
                     <button
+                      type="button"
                       onClick={() =>
                         trackEvent("click-started", { button: "hero" })
                       }
-                      className="mt-4 cursor-pointer rounded px-6 py-3 border border-white 
-                        text-white uppercase font-medium tracking-wide hover:bg-white 
-                        hover:text-black transition-all"
+                      className="mt-2 cursor-pointer rounded border border-white px-5 py-3
+                        text-sm font-medium uppercase tracking-wide text-white transition-all
+                        hover:bg-white hover:text-black sm:mt-4 sm:px-6 sm:text-base"
                     >
                       {slide.buttonText}{" "}
                       <i className="bi bi-arrow-right ml-2"></i>
@@ -84,20 +83,22 @@ const Hero = () => {
           ))}
 
           {/* Navigation Buttons */}
-          <div
-            className="swiper-button-next swiper-btn swiper-next left-4 top-[80%]
-           absolute z-20"
+          <button
+            type="button"
+            aria-label="Diapositive suivante"
+            className="swiper-button-next swiper-btn swiper-next hero-swiper-next"
           >
             <i className="ri-arrow-right-wide-line"></i>
-          </div>
-          <div
-            className="swiper-button-prev swiper-btn swiper-prev left-4 top-[90%]
-           absolute z-20"
+          </button>
+          <button
+            type="button"
+            aria-label="Diapositive précédente"
+            className="swiper-button-prev swiper-btn swiper-prev hero-swiper-prev"
           >
             <i className="ri-arrow-left-wide-line"></i>
-          </div>
+          </button>
         </Swiper>
-      </div>
+      </section>
 
       {/* Marquee */}
       <Marquee />
