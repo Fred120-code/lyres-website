@@ -65,11 +65,11 @@ const About = () => {
               }}
             >
               {[
-                "/images/batiment.svg",
-                "/images/routes.svg",
-                "/images/ouvrages.svg",
-                "/images/bim.svg",
-                "/images/amenagement.svg",
+                "/images/photo_1.jpg",
+                "/images/photo_2.jpg",
+                "/images/photo_3.jpg",
+                "/images/photo_4.jpg",
+                "/images/photo_5.jpg",
               ].map((src, index) => (
                 <SwiperSlide key={index}>
                   <img
