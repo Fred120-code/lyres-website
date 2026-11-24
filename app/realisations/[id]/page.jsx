@@ -8,7 +8,13 @@ import PageHero from "../../Component/PageHero/PageHero";
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const p = PropertyData.find((i) => i.id === Number(id));
-  return p ? { title: p.title, description: p.desc, alternates: { canonical: `/realisations/${p.id}` } } : {};
+  return p
+    ? {
+        title: p.title,
+        description: p.desc,
+        alternates: { canonical: `/realisations/${p.id}` },
+      }
+    : {};
 }
 
 export default async function PropertyDetails({ params }) {

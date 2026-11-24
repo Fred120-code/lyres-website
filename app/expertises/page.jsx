@@ -3,7 +3,12 @@ import Service from "../Component/Service/Service";
 import Service2 from "../Component/Service2/Service2";
 import PageHero from "../Component/PageHero/PageHero";
 
-export const metadata = { title: "Expertises : ingénierie, maîtrise d’œuvre, conseil et BIM", description: "Études techniques, maîtrise d’œuvre, conseil aux entreprises, BIM, voiries, ouvrages d’art et voies ferrées : les expertises de LYRES en Île-de-France.", alternates: { canonical: "/expertises" } };
+export const metadata = {
+  title: "Expertises : ingénierie, maîtrise d’œuvre, conseil et BIM",
+  description:
+    "Études techniques, maîtrise d’œuvre, conseil aux entreprises, BIM, voiries, ouvrages d’art et voies ferrées : les expertises de LYRES en Île-de-France.",
+  alternates: { canonical: "/expertises" },
+};
 
 const Page = () => {
   return (

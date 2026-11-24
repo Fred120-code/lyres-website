@@ -32,14 +32,16 @@ const About = () => {
               À propos
             </h3>
             <p className="text-sm sm:text-base mb-4 text-gray-700 leading-relaxed">
-              LYRES conçoit, coordonne et pilote vos projets de construction et d’infrastructures, avec rigueur technique et sens du service.
+              LYRES conçoit, coordonne et pilote vos projets de construction et
+              d’infrastructures, avec rigueur technique et sens du service.
             </p>
             <a
               href="/a-propos"
               className="inline-flex items-center
             text-black font-semibold hover:underline text-sm sm:text-base hover:text-[#c9a24b] transition-colors"
             >
-              En savoir plus <i className="bi bi-arrow-up-right ml-2 text-xs"></i>
+              En savoir plus{" "}
+              <i className="bi bi-arrow-up-right ml-2 text-xs"></i>
             </a>
           </div>
         </div>

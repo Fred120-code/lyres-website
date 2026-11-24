@@ -34,7 +34,7 @@ const Hero = () => {
             prevEl: ".swiper-button-prev",
           }}
           className="h-full"
-        >
+        >j
           {HeroSlides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div

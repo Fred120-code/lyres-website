@@ -11,16 +11,19 @@ const Service2 = () => {
           </h1>
         </div>
         <div className="w-full lg:w-1/3">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-jost font-semibold mb-3 sm:mb-4">Nos secteurs</h3>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-jost font-semibold mb-3 sm:mb-4">
+            Nos secteurs
+          </h3>
           <p className="mb-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-            Bâtiment, routes, ouvrages d’art, voies ferrées, aménagement urbain et BIM : cinq terrains d’action, une même exigence technique.
+            Bâtiment, routes, ouvrages d’art, voies ferrées, aménagement urbain
+            et BIM : cinq terrains d’action, une même exigence technique.
           </p>
-          <a href="/expertises">
+          <a href="/realisations">
             <button
               className="flex items-center
                 text-black font-semibold hover:underline text-sm sm:text-base md:text-lg py-2 sm:py-3 px-0 hover:text-[#c9a24b] transition-colors"
             >
-              <span>Tous nos secteurs</span>
+              <span>Nos réalisations</span>
               <i className="bi bi-arrow-up-right ml-2 text-xs"></i>
             </button>
           </a>
