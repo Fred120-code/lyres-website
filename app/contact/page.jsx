@@ -12,7 +12,14 @@ E-mail : ${d.get("email")}
 Téléphone : ${d.get("phone") || "-"}
 
 ${d.get("message")}`;
-    window.location.href = `mailto:contact@lyres-ingenierie.fr?subject=${encodeURIComponent("Demande via le site LYRES")}&body=${encodeURIComponent(body)}`;
+    const params = new URLSearchParams({
+      view: "cm",
+      fs: "1",
+      to: "contact@lyres-ingenierie.fr",
+      su: "Demande via le site LYRES",
+      body,
+    });
+    window.location.href = `https://mail.google.com/mail/?${params.toString()}`;
   };
   return (
     <div>
