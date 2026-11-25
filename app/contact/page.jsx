@@ -12,7 +12,7 @@ E-mail : ${d.get("email")}
 Téléphone : ${d.get("phone") || "-"}
 
 ${d.get("message")}`;
-    window.location.href = `mailto:lyres.bet@yahoo.com?subject=${encodeURIComponent("Demande via le site LYRES")}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:contact@lyres-ingenierie.fr?subject=${encodeURIComponent("Demande via le site LYRES")}&body=${encodeURIComponent(body)}`;
   };
   return (
     <div>
@@ -41,7 +41,7 @@ ${d.get("message")}`;
                   <a href="tel:+33698455576">
                     <i className="bi bi-telephone text-2xl text-black"></i>
                   </a>
-                  <a href="mailto:lyres.bet@yahoo.com">
+                  <a href="mailto:contact@lyres-ingenierie.fr">
                     <i className="bi bi-envelope text-2xl text-black"></i>
                   </a>
                 </div>

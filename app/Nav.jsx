@@ -81,7 +81,7 @@ const Nav = () => {
             <i className="bi bi-telephone text-lg xl:text-xl"></i>
           </a>
           <a
-            href="mailto:lyres.bet@yahoo.com"
+            href="mailto:contact@lyres-ingenierie.fr"
             className={`transition-all ${isSticky ? "text-black hover:text-[#c9a24b]" : "text-white hover:text-orange-300"}`}
           >
             <i className="bi bi-envelope text-lg xl:text-xl"></i>
@@ -137,7 +137,7 @@ const Nav = () => {
                 <i className="bi bi-telephone text-lg"></i>
               </a>
               <a
-                href="mailto:lyres.bet@yahoo.com"
+                href="mailto:contact@lyres-ingenierie.fr"
                 className="text-black hover:text-[#c9a24b] transition-all py-3"
               >
                 <i className="bi bi-envelope text-lg"></i>

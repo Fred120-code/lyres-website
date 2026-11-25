@@ -23,7 +23,7 @@ export const metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org", "@type": "ProfessionalService", name: "LYRES", url: SITE_URL,
-  email: "lyres.bet@yahoo.com", telephone: "+33698455576", image: `${SITE_URL}/og.png`, areaServed: "Île-de-France",
+  email: "contact@lyres-ingenierie.fr", telephone: "+33698455576", image: `${SITE_URL}/og.png`, areaServed: "Île-de-France",
   address: { "@type": "PostalAddress", streetAddress: "25 avenue Lénine", postalCode: "78260", addressLocality: "Achères", addressCountry: "FR" },
 };
 

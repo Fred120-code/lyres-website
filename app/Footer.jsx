@@ -42,7 +42,7 @@ const Footer = () => {
                     href="#"
                     className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg hover:underline inline-block"
                   >
-                    lyres.bet@yahoo.com
+                    contact@lyres-ingenierie.fr
                   </a>
                 </div>
               </div>
@@ -95,7 +95,7 @@ const Footer = () => {
                   Contact direct
                 </h3>
                 <a
-                  href="mailto:lyres.bet@yahoo.com"
+                  href="mailto:contact@lyres-ingenierie.fr"
                   className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-700 hover:text-black
                      hover:ps-2 transition-all duration-300"
                 >

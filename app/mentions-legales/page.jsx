@@ -8,7 +8,7 @@ const Page = () => (
       <p><b>Éditeur :</b> LYRES, SASU au capital de 500 €, 25 avenue Lénine, 78260 Achères. SIREN 940 001 027, SIRET 940 001 027 00017, APE 7490A.</p>
       <p><b>Directeur de la publication :</b> M. Rodolphe Narcisse Sezono, Président.</p>
       <p><b>Hébergeur :</b> Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis.</p>
-      <p><b>Données personnelles :</b> les messages et candidatures reçus servent uniquement à traiter votre demande et ne sont pas transmis à des tiers. Suppression sur simple demande à lyres.bet@yahoo.com.</p>
+      <p><b>Données personnelles :</b> les messages et candidatures reçus servent uniquement à traiter votre demande et ne sont pas transmis à des tiers. Suppression sur simple demande à contact@lyres-ingenierie.fr.</p>
     </div>
   </section>
 );
