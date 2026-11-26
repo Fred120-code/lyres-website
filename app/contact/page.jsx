@@ -112,7 +112,7 @@ ${d.get("message")}`;
             {/* Image */}
             <div className="w-full md:w-2/5 h-[400px]">
               <img
-                src="/images/hero.svg"
+                src="/images/photo_18.jpg"
                 alt="contact-banner"
                 className="w-full h-full object-cover rounded-2xl"
               />

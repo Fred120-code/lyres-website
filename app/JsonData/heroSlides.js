@@ -11,7 +11,7 @@ const HeroSlides = [
     buttonLink: "/expertises",
   },
   {
-    bgImage: "/images/photo_2.jpg",
+    bgImage: "/images/photo_9.jpg",
     span: "Maîtrise d’œuvre",
     title: "Piloter \nvos chantiers",
     paragraphs: [
@@ -22,7 +22,7 @@ const HeroSlides = [
     buttonLink: "/a-propos",
   },
   {
-    bgImage: "/images/photo_3.jpg",
+    bgImage: "/images/photo_10.jpg",
     span: "BIM et numérique",
     title: "Coordonner \nen numérique",
     paragraphs: [
@@ -33,7 +33,7 @@ const HeroSlides = [
     buttonLink: "/expertises",
   },
   {
-    bgImage: "/images/photo_4.jpg",
+    bgImage: "/images/photo_13.jpg",
     span: "Infrastructures",
     title: "Routes, ponts \net rail",
     paragraphs: [
@@ -44,7 +44,7 @@ const HeroSlides = [
     buttonLink: "/realisations",
   },
   {
-    bgImage: "/images/photo_5.jpg",
+    bgImage: "/images/photo_21.jpg",
     span: "Conseil aux entreprises",
     title: "Décider \nen confiance",
     paragraphs: [

@@ -23,7 +23,11 @@ const Page = () => {
             <div className="lg:w-1/3">
               <div>
                 <p className="mt-2 text-gray-600">
-                  LYRES est une société d’ingénierie et de conseil spécialisée dans la construction et les infrastructures. Nous accompagnons les maîtres d’ouvrage, les entreprises et les bureaux d’études dans la conception, la coordination et le pilotage de leurs projets.
+                  LYRES est une société d’ingénierie et de conseil spécialisée
+                  dans la construction et les infrastructures. Nous accompagnons
+                  les maîtres d’ouvrage, les entreprises et les bureaux d’études
+                  dans la conception, la coordination et le pilotage de leurs
+                  projets.
                 </p>
               </div>
             </div>
@@ -38,7 +42,7 @@ const Page = () => {
              rounded-lg"
             >
               <Image
-                src="/images/bim.svg"
+                src="/images/photo_17.jpg"
                 alt="vision"
                 width={800}
                 height={500}
@@ -49,10 +53,15 @@ const Page = () => {
             <div className="lg:w-1/2 lg:pl-12">
               <p className="mb-4 text-gray-700 leading-relaxed">
                 <span className="text-gray-800 font-bold">Notre </span>
-                vision est de contribuer à la réussite de projets de construction et d’infrastructures, en alliant rigueur technique, anticipation des contraintes et sens du service.
+                vision est de contribuer à la réussite de projets de
+                construction et d’infrastructures, en alliant rigueur technique,
+                anticipation des contraintes et sens du service.
               </p>
               <p className="text-gray-800 leading-relaxed">
-                Nous croyons qu’une étude solide et une coordination claire font la différence entre un projet subi et un projet maîtrisé. Le BIM et le numérique sont au cœur de notre manière de travailler : moins de reprises, plus de fluidité entre les acteurs.
+                Nous croyons qu’une étude solide et une coordination claire font
+                la différence entre un projet subi et un projet maîtrisé. Le BIM
+                et le numérique sont au cœur de notre manière de travailler :
+                moins de reprises, plus de fluidité entre les acteurs.
               </p>
             </div>
           </div>
@@ -62,10 +71,13 @@ const Page = () => {
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-1/2 lg:pl-12">
               <p className="mb-4 text-gray-700 leading-relaxed">
-                Chez <strong>LYRES</strong>, notre engagement est de conjuguer qualité, maîtrise des coûts, respect des délais et performance opérationnelle sur chacun de vos projets.
+                Chez <strong>LYRES</strong>, notre engagement est de conjuguer
+                qualité, maîtrise des coûts, respect des délais et performance
+                opérationnelle sur chacun de vos projets.
               </p>
               <p className="text-gray-800 leading-relaxed">
-                Nos valeurs : rigueur, transparence et engagement. Chaque décision technique est documentée et partagée avec vous.
+                Nos valeurs : rigueur, transparence et engagement. Chaque
+                décision technique est documentée et partagée avec vous.
               </p>
             </div>
 
@@ -74,7 +86,7 @@ const Page = () => {
              rounded-lg"
             >
               <Image
-                src="/images/batiment.svg"
+                src="/images/photo_11.jpg"
                 alt="vision"
                 width={800}
                 height={500}
